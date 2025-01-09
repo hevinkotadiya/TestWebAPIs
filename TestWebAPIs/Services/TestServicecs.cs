@@ -13,4 +13,9 @@ public class TestServicecs : ITestServicecs
     {
         return testRepository.GetTestAll();
     }
+
+    public Task<Test> GetTestById(int id)
+    {
+        return testRepository.GetTestById(id);
+    }
 }

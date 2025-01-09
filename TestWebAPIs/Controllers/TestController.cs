@@ -11,9 +11,18 @@ public class TestController : ControllerBase
         testServicecs = _testServicecs;
     }
 
-    [HttpGet(Name = "getall")]
+    //[HttpGet("getalltest")]
+    [HttpGet]
+    [Route("getalltest")]
     public IActionResult GetAllTest()
     {   
         return Ok(testServicecs.GetTestAll());
+    }
+
+    [HttpGet]
+    [Route("gettestbyid/{id}")]
+    public IActionResult GetTestById(int id) 
+    { 
+        return Ok(testServicecs.GetTestById(id));
     }
 }
